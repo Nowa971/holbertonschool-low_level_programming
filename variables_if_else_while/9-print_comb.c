@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible combinations of single-digit numbers
+ * main - prints all possible combinations of two single-digit numbers,
+ * separated by comma and space, in ascending order.
  *
- * Return: Always 0
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -13,17 +14,21 @@ int main(void)
 	{
 		for (j = i + 1; j <= 9; j++)
 		{
-			putchar(i + '0');
-			putchar(j + '0');
+			putchar(i + '0');     /* print first digit */
+			putchar(j + '0');     /* print second digit */
 
-			if (i != 8 || j != 9)
+			if (i == 8 && j == 9)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar('\n');    /* end line after last combo */
+			}
+			else
+			{
+				putchar(',');     /* print comma */
+				putchar(' ');     /* print space */
 			}
 		}
 	}
-	putchar('\n');
-
 	return (0);
 }
+
+
