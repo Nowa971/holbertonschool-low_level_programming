@@ -1,30 +1,30 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible combinations of two single-digit numbers,
- * separated by comma (no space), in ascending order.
+ * main - prints all single-digit numbers of base 10,
+ * separated by ", ", in ascending order.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	int i, j;
+	int i;
 
-	for (i = 0; i <= 8; i++)
+	for (i = 0; i <= 9; i++)
 	{
-		for (j = i + 1; j <= 9; j++)
-		{
-			putchar(i + '0');      /* 1 */
-			putchar(j + '0');      /* 2 */
+		putchar(i + '0');       /* 1 - print digit */
 
-			if (i == 8 && j == 9)
-				putchar('\n');     /* 3 */
-			else
-				putchar(',');      /* 4 */
+		if (i != 9)
+		{
+			putchar(',');       /* 2 - comma */
+			putchar(' ');       /* 3 - space */
 		}
 	}
+
+	putchar('\n');              /* 4 - newline */
 	return (0);
 }
+
 
 
 
